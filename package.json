@@ -1,0 +1,31 @@
+{
+  "name": "cycle-service-worker",
+  "version": "0.0.1",
+  "description": "Cycle.js service worker tools.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "beefy": "beefy client.js:public/bundle.js public/service-worker.js:public/sw.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bloodyKnuckles/cycle-service-worker.git"
+  },
+  "keywords": [
+    "cyclejs",
+    "service-worker"
+  ],
+  "author": "Jay Scott ANDERSON",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bloodyKnuckles/cycle-service-worker/issues"
+  },
+  "homepage": "https://github.com/bloodyKnuckles/cycle-service-worker#readme",
+  "dependencies": {
+    "@cycle/run": "^4.1.0",
+    "xstream": "^11.1.0"
+  },
+  "devDependencies": {
+    "@cycle/dom": "^20.1.0"
+  }
+}

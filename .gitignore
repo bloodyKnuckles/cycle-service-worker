@@ -1,0 +1,8 @@
+data
+public/js
+sessions
+*.bak
+*.log
+npm-debug.log*
+node_modules
+.DS_Store
