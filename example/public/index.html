@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+</head>
+<body>
+  <a href="test.html">site</a> 
+  <div id="main"></div>
+  <script src="bundle.js"></script>
+  <script>
+    if ( navigator.serviceWorker.controller ) {
+      navigator.serviceWorker.controller.postMessage('yup')
+    }
+  </script>
+</body>
+</html>
