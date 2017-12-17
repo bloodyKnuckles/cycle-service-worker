@@ -1,6 +1,6 @@
 # cycle-service-worker
 
-Run a separate [Cycle.js](https://cycle.js.org/) app in a service worker and open a message channel between the two.
+Run a separate [Cycle.js](https://cycle.js.org/) app in a service worker and open a message channel between it and the app in the main thread.
 
 ## use
 
