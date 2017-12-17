@@ -1,6 +1,6 @@
 {
   "name": "cycle-service-worker",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Run a separate Cycle.js app in a service worker.",
   "main": "index.js",
   "scripts": {
