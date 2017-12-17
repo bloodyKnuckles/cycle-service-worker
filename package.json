@@ -1,7 +1,7 @@
 {
   "name": "cycle-service-worker",
   "version": "0.0.1",
-  "description": "Cycle.js service worker tools.",
+  "description": "Run a separate Cycle.js app in a service worker.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
