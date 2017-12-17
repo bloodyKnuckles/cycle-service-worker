@@ -1,7 +1,8 @@
 const xs = require('xstream').default
 const div = require('@cycle/dom').div
 
-module.exports = (sources)  => {
+function main (sources) {
+
   const vdom$ = xs.of(div([div('app'), div('#section')]))
   const message$ = xs.of('hey')
   const log$ = sources.SWM
@@ -13,3 +14,5 @@ module.exports = (sources)  => {
     log: log$
   }
 }
+
+module.exports = main

@@ -30,8 +30,6 @@ function makeServiceWorkerEventDriver () {
         switch ( eventtype ) {
           case 'message':
           case 'fetch':
-          case 'intstall':
-          case 'activate':
             return xs.create({
               next: null,
               start: listener => {
