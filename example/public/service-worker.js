@@ -5,7 +5,7 @@ const xs = require('xstream').default
 function main (sources) {
 
  const incmsg$ = sources.SWE.events('message')
-    .map(msg => 'message received from main: ' + msg.data)
+    .map(evt => 'message received from main: ' + evt.data)
  
   const message$ = xs.periodic(1000).take(3).map(inc => 'send message ' + inc)
 
