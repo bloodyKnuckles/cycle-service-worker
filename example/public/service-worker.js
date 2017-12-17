@@ -1,6 +1,6 @@
 const run = require('@cycle/run').run
-const makeServiceWorkerEventDriver = require('../../').makeServiceWorkerEventDriver
 const xs = require('xstream').default
+const makeServiceWorkerEventDriver = require('../../').makeServiceWorkerEventDriver
 
 function main (sources) {
 
