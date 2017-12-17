@@ -3,11 +3,9 @@ const xs = require('xstream').default
 const makeServiceWorkerEventDriver = require('../../').makeServiceWorkerEventDriver
 
 function main (sources) {
-
- const incmsg$ = sources.SWE.events('message')
-    .map(evt => 'message received from main: ' + evt.data)
- 
   const message$ = xs.periodic(1000).take(3).map(inc => 'send message ' + inc)
+  const incmsg$ = sources.SWE.events('message')
+    .map(evt => 'message received from main: ' + evt.data)
 
   return {
     SWE: message$,
