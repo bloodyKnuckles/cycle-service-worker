@@ -56,30 +56,31 @@ function makeServiceWorkerMessageDriver (sw) {
   function ServiceWorkerMessageDriver (message$, name = 'SWM') {
 
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register(sw)
+      navigator.serviceWorker.register(sw).then(function () {
    
-      message$.addListener({
-        next: message => {
-          if ( navigator.serviceWorker.controller ) {
-            navigator.serviceWorker.controller.postMessage(message)
-          }
-        },
-        error: () => {},
-        complete: () => {}
-      })
+        message$.addListener({
+          next: message => {
+            if ( navigator.serviceWorker.controller ) {
+              navigator.serviceWorker.controller.postMessage(message)
+            }
+          },
+          error: () => {},
+          complete: () => {}
+        })
 
-      return xs.create({
-        next: null,
-        start: listener => {
-          navigator.serviceWorker.addEventListener('message', function (evt) {
-            listener.next(evt)
-          })
-        },
-        stop: () => {}
+        return xs.create({
+          next: null,
+          start: listener => {
+            navigator.serviceWorker.addEventListener('message', function (evt) {
+              listener.next(evt)
+            })
+          },
+          stop: () => {}
+        })
       })
+      return ServiceWorkerMessageDriver
     }
   }
-  return ServiceWorkerMessageDriver
 }
 
 exports.makeServiceWorkerEventDriver = makeServiceWorkerEventDriver

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "beefy": "beefy client.js:public/bundle.js public/service-worker.js:public/sw.js"
+    "beefy": "beefy example/client.js:example/public/bundle.js example/public/service-worker.js:example/public/sw.js"
   },
   "repository": {
     "type": "git",

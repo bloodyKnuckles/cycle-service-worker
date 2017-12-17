@@ -3,12 +3,13 @@ const div = require('@cycle/dom').div
 
 module.exports = (sources)  => {
   const vdom$ = xs.of(div([div('app'), div('#section')]))
+  const message$ = xs.of('hey')
   const log$ = sources.SWM
-    .map(msg => 'message received: ' + msg.data)
+    .map(msg => 'message received from sw: ' + msg.data)
 
   return {
     DOM: vdom$,
-    SWM: xs.empty(),
+    SWM: message$,
     log: log$
   }
 }

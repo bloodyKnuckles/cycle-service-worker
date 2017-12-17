@@ -4,12 +4,8 @@ const xs = require('xstream').default
 
 function main (sources) {
 
-  self.addEventListener('activate', function(event) {
-    event.waitUntil(self.clients.claim())
-  })
-
-  const incmsg$ = sources.SWE.events('message')
-    .map(msg => 'message received: ' + msg.data)
+ const incmsg$ = sources.SWE.events('message')
+    .map(msg => 'message received from main: ' + msg.data)
  
   const message$ = xs.periodic(1000).take(3).map(inc => 'send message ' + inc)
 
