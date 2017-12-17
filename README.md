@@ -10,7 +10,7 @@ const run = require('@cycle/run').run
 const xs = require('xstream').default
 const makeDOMDriver = require('@cycle/dom').makeDOMDriver
 const div = require('@cycle/dom').div
-const makeServiceWorkerMessageDriver = require('../').makeServiceWorkerMessageDriver
+const makeServiceWorkerMessageDriver = require('cycle-service-worker').makeServiceWorkerMessageDriver
 
 function main (sources) {
   const vdom$ = xs.of(div([div('app'), div('#section')]))
@@ -36,7 +36,7 @@ __service-worker.js__
 ```
 const run = require('@cycle/run').run
 const xs = require('xstream').default
-const makeServiceWorkerEventDriver = require('../../').makeServiceWorkerEventDriver
+const makeServiceWorkerEventDriver = require('cycle-service-worker').makeServiceWorkerEventDriver
 
 function main (sources) {
   const message$ = xs.periodic(1000).take(3).map(inc => 'send message ' + inc)
