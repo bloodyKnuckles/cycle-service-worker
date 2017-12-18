@@ -1,6 +1,6 @@
 # cycle-service-worker
 
-Run a separate [Cycle.js](https://cycle.js.org/) app in a service worker and open a message channel between it and the app in the main thread.
+Run a separate [Cycle.js](https://cycle.js.org/) app in a service worker and open a message channel between it and the app in the main thread. See [example](https://github.com/bloodyKnuckles/cycle-service-worker/tree/master/example).
 
 ## use
 
@@ -27,7 +27,7 @@ function main (sources) {
 
 run(main, {
   DOM: makeDOMDriver('#main'),
-  SWM: makeServiceWorkerMessageDriver('./sw.js'),
+  SWM: makeServiceWorkerMessageDriver('./service-worker.js'),
   log: msg$ => { msg$.addListener({next: msg => console.log(msg)}) }
 })
 ```
@@ -71,3 +71,12 @@ run(main, {
   log: msg$ => { msg$.addListener({next: msg => console.log(msg)}) }
 })
 ```
+
+##run example
+```
+git clone https://github.com/bloodyKnuckles/cycle-service-worker.git
+cd cycle-service-worker
+npm install
+npm run-script beefy
+```
+Now open [localhost:9966/example/public/index.html](http://localhost:9966/example/public/index.html), and open the console.
