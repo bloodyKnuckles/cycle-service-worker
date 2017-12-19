@@ -72,7 +72,7 @@ run(main, {
 })
 ```
 
-##run example
+## run example
 ```
 git clone https://github.com/bloodyKnuckles/cycle-service-worker.git
 cd cycle-service-worker
