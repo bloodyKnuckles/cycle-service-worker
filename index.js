@@ -51,11 +51,14 @@ function makeServiceWorkerEventDriver () {
 
 function makeServiceWorkerMessageDriver (sw) {
 
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register(sw)
+  }
+ 
   function ServiceWorkerMessageDriver (message$, name = 'SWM') {
 
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register(sw)
-   
+  if ('serviceWorker' in navigator) {
+
       message$.addListener({
         next: message => {
           if ( navigator.serviceWorker.controller ) {
