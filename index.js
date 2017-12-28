@@ -49,15 +49,15 @@ function makeServiceWorkerEventDriver () {
 }
 
 
-function makeServiceWorkerMessageDriver (sw) {
+function makeServiceWorkerDriver (sw) {
 
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register(sw)
   }
  
-  function ServiceWorkerMessageDriver (message$, name = 'SWM') {
+  function ServiceWorkerDriver (message$, name = 'SWM') {
 
-  if ('serviceWorker' in navigator) {
+    if ('serviceWorker' in navigator) {
 
       message$.addListener({
         next: message => {
@@ -80,8 +80,8 @@ function makeServiceWorkerMessageDriver (sw) {
       })
     }
   }
-  return ServiceWorkerMessageDriver
+  return ServiceWorkerDriver
 }
 
 exports.makeServiceWorkerEventDriver = makeServiceWorkerEventDriver
-exports.makeServiceWorkerMessageDriver = makeServiceWorkerMessageDriver
+exports.makeServiceWorkerDriver = makeServiceWorkerDriver

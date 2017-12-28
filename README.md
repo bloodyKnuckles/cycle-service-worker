@@ -10,7 +10,7 @@ const run = require('@cycle/run').run
 const xs = require('xstream').default
 const makeDOMDriver = require('@cycle/dom').makeDOMDriver
 const div = require('@cycle/dom').div
-const makeServiceWorkerMessageDriver = require('cycle-service-worker').makeServiceWorkerMessageDriver
+const makeServiceWorkerDriver = require('cycle-service-worker').makeServiceWorkerDriver
 
 function main (sources) {
 
@@ -27,7 +27,7 @@ function main (sources) {
 
 run(main, {
   DOM: makeDOMDriver('#main'),
-  SWM: makeServiceWorkerMessageDriver('./service-worker.js'),
+  SWM: makeServiceWorkerDriver('./service-worker.js'),
   log: msg$ => { msg$.addListener({next: msg => console.log(msg)}) }
 })
 ```
